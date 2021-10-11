@@ -1,1 +1,1 @@
-
+kill $(ps aux | grep 'ng serve' | grep -v grep | awk '{print $2}')
