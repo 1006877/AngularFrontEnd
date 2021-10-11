@@ -5,7 +5,10 @@ files:
     destination: /webapp/myApp
 file_exists_behavior: OVERWRITE
 hooks:
-  AfterInstall:
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 3600
+  ApplicationStart:
     - location: scripts/start_server
-      timeout: 150
-      runas: root
+      timeout: 3600
+  
