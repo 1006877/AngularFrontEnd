@@ -1,8 +1,5 @@
 #!/bin/sh
 
 cd /webapp/myApp/target
-pwd
-ls
 my_ip=$(curl curl http://169.254.169.254/latest/meta-data/public-hostname)
-kill $(ps aux | grep 'ng serve' | grep -v grep | awk '{print $2}')
 ng serve --host $my_ip --port 8080 > /dev/null 2> /dev/null < /dev/null &
